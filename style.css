@@ -1,73 +1,120 @@
+/* Общий стиль */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #1b1b1b;
-    color: #f5f5f5;
-  }
-  
-  header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background-color: #2c2c2c;
-  }
-  
-  .subtitle {
-    color: #aaa;
-    margin-top: 0.5rem;
-  }
-  
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 2rem;
-  }
-  
-  .card {
-    background-color: #2e2e2e;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 260px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    transition: 0.3s;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-  
-  .card h2 {
-    margin: 1rem 1rem 0.5rem;
-  }
-  
-  .card p {
-    margin: 0 1rem 1rem;
-    color: #ccc;
-  }
-  
-  .card button {
-    margin: 0 1rem 1rem;
-    padding: 0.5rem 1rem;
-    background: #f50057;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.8rem;
-    background-color: #2c2c2c;
-    color: #888;
-  }
-  
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #181818 0%, #121212 100%);
+  color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Шапка */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(90deg, #2c2c2c, #1e1e1e);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #ff4f8b;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Карточки */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #1f1f1f;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
+
+/* Фото в карточках */
+.card-image {
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.price {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(255, 79, 139, 0.85);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* Контент карточки */
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+}
+
+.location {
+  margin: 0 0 1rem;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+/* Кнопка */
+.card-content button {
+  width: 100%;
+  padding: 0.6rem;
+  background: linear-gradient(90deg, #ff4f8b, #ff6fa5);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card-content button:hover {
+  background: linear-gradient(90deg, #ff6fa5, #ff4f8b);
+  transform: scale(1.03);
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  background: #1a1a1a;
+  color: #888;
+  border-top: 1px solid #2c2c2c;
+}
